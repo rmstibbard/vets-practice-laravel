@@ -1,1 +1,2 @@
-# vets-practice-laravel
+# Laravel Project - Vet's Practice
+
