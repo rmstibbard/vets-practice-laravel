@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', 'HomeController@index')->name('home');
+
 // Owners controller - View
-Route::get('/', "Owners@index");
+Route::get('/owners', "Owners@index");
 Route::get('owners/{owner}', "Owners@show");
 
 // Owners controller - Create
@@ -42,10 +44,6 @@ Route::post('animals/edit/{animal}', "Animals@editAnimal");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/about', function () {
-    return view('about');
-});
-
+Route::get('/about', 'Pages@about');
 Route::get('/services', 'Pages@services');
+Route::get('/contact', 'Pages@contact');

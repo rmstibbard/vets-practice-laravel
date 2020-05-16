@@ -1,0 +1,49 @@
+/* Custom styles go here */
+
+.navbar-brand {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+ul.navbar-nav {
+    flex-direction: row !important;
+}
+
+.nav-item {
+    padding-left: 30px;
+    font-size: 0.9rem;
+}
+
+.nav-link {
+    color: black !important;
+    font-weight: 100 !important;
+}
+
+.nav-link:visited {
+    color: black !important;
+}
+
+.nav-link:hover {
+    color: red !important;
+}
+
+a.edit {
+    color: black;
+    font-size: 1.1rem;
+}
+
+a.edit:link {
+    color: black;
+}
+
+a.edit:hover {
+    color: black;
+}
+
+a.edit:visited {
+    color: black;
+}
+
+.edit-animal {
+    padding-left: 30px;
+}

@@ -21,6 +21,6 @@ class Animal extends Model
     }
     public function animalDetails() {
         return "DoB: " . date('j M Y', strtotime($this->dob)) . ". Weight: " . $this->weight . "kg. Height: " . $this->height . "cm. Biteyness score: " . $this->biteyness;
-        }
+    }
 
 }
