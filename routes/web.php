@@ -38,7 +38,7 @@ Route::get('animals/edit/{animal}', "Animals@edit");
 Route::post('animals/edit/{animal}', "Animals@editAnimal");
 
 
-////// 
+//////
 
 Auth::routes();
 
@@ -47,3 +47,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/services', 'Pages@services');
