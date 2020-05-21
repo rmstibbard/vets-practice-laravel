@@ -31,7 +31,7 @@ class Animals extends Controller
     public function update(Request $request, Animal $animal) {
         $data = $request->only(["animal_name", "animal_type", "dob", "weight", "height", "biteyness"]);
         $animal->fill($data)->save();
-        $animal->setTags($request->get("treatments"));
+        $animal->setTreatments($request->get("treatments"));
         return new AnimalResource($animal);
     }
 
