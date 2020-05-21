@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Animal;
+use App\Owner;
+
 use App\Http\Requests\AnimalRequest;
 
 class Animals extends Controller
 {
 
+
+    // VIEW ANIMALS
     public function index()
     {
         return view("animals", [
@@ -16,6 +20,7 @@ class Animals extends Controller
         ]);
     }
 
+    // VIEW ANIMAL
     public function show(Animal $animal)
     {
         return view("animal", [
@@ -23,16 +28,29 @@ class Animals extends Controller
         ]);
     }
 
-        public function edit(Animal $animal)
+    // EDIT ANIMAL
+    public function edit(Animal $animal)
     {
         return view("editAnimal", [
-            "animal" => $animal
+            "animal" => $animal,
+            "owners" => Owner::all()
         ]);
     }
 
+    public function editAnimal(Animal $animal, AnimalRequest $request)
+    {
+        $data = $request->all();
+        $animal->fill($data)->save();
+        return redirect("/animals/{$animal->id}");
+    }
+
+    // CREATE ANIMAL
     public function create()
     {
-        return view("createAnimal");
+         return view("createAnimal",[
+             "animal" => null,
+            "owners" => Owner::all()
+         ]);
     }
 
     public function createAnimal(Request $request)
@@ -42,11 +60,10 @@ class Animals extends Controller
         return redirect("/animals/{$animal->id}");
     }
 
-        public function editAnimal(Animal $animal, AnimalRequest $request)
-    {
-        $data = $request->all();
-        $animal->fill($data)->save();
-        return redirect("/animals/{$animal->id}");
+    // DELETE ANIMAL
+    public function deleteAnimal(Animal $animal) {
+        $animal->delete($animal);
+        return redirect("/animals");
     }
 
 }

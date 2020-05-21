@@ -10949,6 +10949,14 @@ ul.navbar-nav {
   font-size: 0.9rem;
 }
 
+.animal-list-edit,
+.animal-list-delete,
+.owner-list-edit,
+.owner-list-delete {
+  float: right;
+  padding-right: 40px;
+}
+
 .nav-link {
   color: black !important;
   font-weight: 100 !important;
@@ -10964,7 +10972,6 @@ ul.navbar-nav {
 
 a.edit {
   color: black;
-  font-size: 1.1rem;
 }
 
 a.edit:link {
@@ -10979,7 +10986,96 @@ a.edit:visited {
   color: black;
 }
 
-.edit-animal {
-  padding-left: 30px;
+.nav-item:last-of-type {
+  margin-right: 50px;
+}
+
+.owner,
+.owner-animals,
+.animal,
+.animals-list {
+  background-color: #EEE;
+  padding: 10px;
+  border: 1px solid #aaa;
+}
+
+.animals-list p {
+  line-height: 3rem;
+  border-bottom: 1px dotted #ccc;
+}
+
+.owner h5 {
+  font-size: 2rem;
+}
+
+.owner-animals {
+  line-height: 3rem;
+}
+
+.owner-animals h3 {
+  font-size: 1.5rem;
+}
+
+.animal-name {
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.animal-type {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.animal-list-name {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.animal-list-type {
+  color: black;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.animal-details {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.animal-link:link,
+.owner-link:link {
+  color: black;
+}
+
+.animal-link:visited,
+.owner-link:visited {
+  color: black;
+}
+
+.animal-link:hover,
+.owner-link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.dangerous {
+  font-weight: bold !important;
+  color: red !important;
+}
+
+.animal-belongs-to a {
+  font-size: 2rem;
+}
+
+.owner a:link {
+  color: black;
+}
+
+.owner a:visited {
+  color: black;
 }
 

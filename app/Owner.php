@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Animal;
 
 class Owner extends Model
 {
@@ -13,13 +14,17 @@ class Owner extends Model
         return $this->firstname . " " . $this->lastname;
     }
 
-
     public function formattedPhoneNumber()
     {
         $part1 = substr($this->landline, 0, 5);
         $part2 = substr($this->landline, 5, 3);
         $part3 = substr($this->landline, 8, 3);
         return $part1 . " " . $part2 . " " . $part3;
+    }
+
+    public function validPhoneNumber()
+    {
+        return strlen($this->landline) === 11;
     }
 
     public function fullAddress()
@@ -31,5 +36,9 @@ class Owner extends Model
     {
         // use hasMany relationship method
         return $this->hasMany(Animal::class);
+    }
+
+    public function numberOfPets() {
+        return count($this->animals);
     }
 }

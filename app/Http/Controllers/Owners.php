@@ -9,6 +9,8 @@ use App\Http\Requests\OwnerRequest;
 
 class Owners extends Controller
 {
+
+    // VIEW OWNERS
     public function index()
     {
         return view("owners", [
@@ -16,6 +18,7 @@ class Owners extends Controller
         ]);
     }
 
+    // VIEW OWNER
     public function show(Owner $owner)
     {
         return view("owner", [
@@ -23,6 +26,7 @@ class Owners extends Controller
         ]);
     }
 
+    // EDIT OWNER
         public function edit(Owner $owner)
     {
         return view("editOwner", [
@@ -30,6 +34,14 @@ class Owners extends Controller
         ]);
     }
 
+    public function editOwner(Owner $owner, Owner $request)
+    {
+        $data = $request->all();
+        $owner->fill($data)->save();
+        return redirect("/owners/{$owner->id}");
+    }
+
+    // CREATE OWNER
     public function create()
     {
         return view("createOwner");
@@ -39,13 +51,6 @@ class Owners extends Controller
     {
         $data = $request->all();
         $owner = Owner::create($data);
-        return redirect("/owners/{$owner->id}");
-    }
-
-        public function editOwner(Owner $owner, OwnerRequest $request)
-    {
-        $data = $request->all();
-        $owner->fill($data)->save();
         return redirect("/owners/{$owner->id}");
     }
 

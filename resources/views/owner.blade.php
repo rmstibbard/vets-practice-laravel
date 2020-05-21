@@ -1,28 +1,44 @@
 @extends("app")
 @section("content")
-<div class="card">
+<div class="ca rd">
+    <div class="owner" ">
+        <h5 class="mb-1">
+            {{ $owner->fullName() }}
+        </h5>
+        <h6>
+            {{ $owner->fullAddress() }}
+        </h6>
 
-    <h5 class="mb-1">
-        {{ $owner->fullName() }}
-    </h5>
-    <h6>
-        {{ $owner->fullAddress() }}
-    </h6>
-    <p>
-        <a class="edit edit-owner" href="/owners/edit/{{ $owner->id }}">EDIT OWNER DETAILS</a></span>
-    </p>
+        <p>
+            <a class="edit edit-owner" href="/owners/edit/{{ $owner->id }}">EDIT OWNER</a></span>
+        </p>
+    </div>
+    <hr>
 
-    @foreach ($owner->animals as $animal)
-     <a href="/animals/{{ $animal->id }}" class="list-group-item list-group-item-action">
+    <div class="owner-animals">
 
-        {{ $animal->animal_name() . " - " . ucfirst($animal->animal_type()) }}
-            {{ $animal->animalDetails() }}
+    <h3>{{ $owner->fullName() }}'s pets</h3>
 
-            <a class="edit edit-animal" href="/animals/edit/{{ $animal->id }}">EDIT ANIMAL DETAILS</a>
+        @foreach ($owner->animals as $animal)
+            <p>
+                <span class="animal-list-name">
+                    <a href="/animals/{{ $animal->id }}" class="animal-link">
+                        {{ $animal->animal_name() }}
+                    </a>
+                </span>
+                <span class="animal-list-type">
+                    - {{ ucfirst($animal->animal_type()) }}
+                </span>
+                <span class="animal-list-details">
+                        {{ $animal->animalDetails() }}
+                </span>
+                @if ($animal->dangerous()==true)
+                    <span class="dangerous">&nbsp;&nbsp;DANGEROUS!</span>
+                @endif
+                <span class="animal-list-edit">
+                    <a class="edit-animal edit" href="/animals/edit/{{ $animal->id }}">Edit</a>
+                </span>
+            </p>
+        @endforeach
 
-
-    </a>
-    @endforeach
-
-</div>
 @endsection
