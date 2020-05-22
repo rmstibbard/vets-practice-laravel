@@ -11,7 +11,6 @@ use App\Http\Requests\AnimalRequest;
 class Animals extends Controller
 {
 
-
     // VIEW ANIMALS
     public function index()
     {
@@ -48,7 +47,7 @@ class Animals extends Controller
     public function create()
     {
          return view("createAnimal",[
-             "animal" => null,
+            "animal" => null,
             "owners" => Owner::all()
          ]);
     }

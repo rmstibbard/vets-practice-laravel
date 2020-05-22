@@ -10999,7 +10999,8 @@ a.edit:visited {
   border: 1px solid #aaa;
 }
 
-.animals-list p {
+.animals-list p,
+.owners-list p {
   line-height: 3rem;
   border-bottom: 1px dotted #ccc;
 }
@@ -11028,7 +11029,8 @@ a.edit:visited {
   font-weight: bold;
 }
 
-.animal-list-name {
+.animal-list-name,
+.owner-list-name {
   color: black;
   font-size: 1.5rem;
   font-weight: bold;

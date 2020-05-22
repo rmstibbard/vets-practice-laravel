@@ -3,7 +3,6 @@
 @section("content")
 
     <div class="animals-list">
-
         @foreach ($animals as $animal)
             <p>
                 <span class="animal-list-name">

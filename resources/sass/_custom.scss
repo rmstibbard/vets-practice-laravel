@@ -13,7 +13,11 @@ ul.navbar-nav {
     padding-left: 30px;
     font-size: 0.9rem;
 }
-.animal-list-edit, .animal-list-delete, .owner-list-edit, .owner-list-delete {
+
+.animal-list-edit,
+.animal-list-delete,
+.owner-list-edit,
+.owner-list-delete {
     float: right;
     padding-right: 40px;
 }
@@ -53,12 +57,16 @@ a.edit:visited {
     margin-right: 50px;
 }
 
-.owner, .owner-animals, .animal, .animals-list {
+.owner,
+.owner-animals,
+.animal,
+.animals-list {
     background-color: #EEE;
     padding: 10px;
     border: 1px solid #aaa;
 }
-.animals-list p {
+.animals-list p,
+.owners-list p  {
     line-height: 3rem;
     border-bottom: 1px dotted #ccc;
 }
@@ -86,7 +94,8 @@ a.edit:visited {
     font-weight: bold;
 }
 
-.animal-list-name {
+.animal-list-name,
+.owner-list-name {
     color: black;
     font-size: 1.5rem;
     font-weight: bold;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Owner;
+use App\Animal;
 use App\Http\Requests\OwnerRequest;
 
 class Owners extends Controller
@@ -30,11 +31,12 @@ class Owners extends Controller
         public function edit(Owner $owner)
     {
         return view("editOwner", [
-            "owner" => $owner
+            "owner" => $owner,
+            "animals" => Animal::all()
         ]);
     }
 
-    public function editOwner(Owner $owner, Owner $request)
+    public function editOwner(Owner $owner, OwnerRequest $request)
     {
         $data = $request->all();
         $owner->fill($data)->save();
@@ -44,9 +46,11 @@ class Owners extends Controller
     // CREATE OWNER
     public function create()
     {
-        return view("createOwner");
+        return view("createOwner",[
+            "owner" => null,
+            "animals" => Animal::all()
+        ]);
     }
-
     public function createOwner(Request $request)
     {
         $data = $request->all();

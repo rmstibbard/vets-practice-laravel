@@ -9,7 +9,7 @@ Auth::routes();
 
 
 // OWNERS GROUP - LOGIN REQUIRED
-Route::group(["prefix" => "owners", "middleware" => "auth" ], function () {
+// Route::group(["prefix" => "owners", "middleware" => "auth" ], function () {
 
     // Owners controller - Create
     Route::get('/create', "Owners@create");
@@ -23,11 +23,11 @@ Route::group(["prefix" => "owners", "middleware" => "auth" ], function () {
     Route::get('/edit/{owner}', "Owners@edit");
     Route::post('/edit/{owner}', "Owners@editOwner");
 
-});
+// });
 
 
 // ANIMALS GROUP - LOGIN REQUIRED
-Route::group(["prefix" => "animals", "middleware" => "auth" ], function () {
+// Route::group(["prefix" => "animals", "middleware" => "auth" ], function () {
 
     // Animals controller - Create
     Route::get('/create', "Animals@create");
@@ -44,14 +44,14 @@ Route::group(["prefix" => "animals", "middleware" => "auth" ], function () {
     // Animals controller - Delete
     Route::get('/delete/{animal}', "Animals@deleteAnimal");
 
-});
+// });
 
 
 // Search page - LOGIN REQUIRED, No prefix
-Route::group(["middleware" => "auth" ], function () {
+// Route::group(["middleware" => "auth" ], function () {
 
     Route::get('/search', 'Pages@search');
-});
+// });
 
 
 // Static pages - NO LOGIN REQUIRED
