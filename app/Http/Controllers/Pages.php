@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Owners;
 use App\Animals;
+use App\User;
 
 class Pages extends Controller
 {
@@ -21,6 +22,18 @@ class Pages extends Controller
     }
     public function contact() {
         return view ('contact');
+    }
+
+    public function services() {
+        return view ('services', [
+            "services"=>
+                [
+                    "Vaccines and boosters",
+                    "Minor surgery",
+                    "Pedicure and Beautification of Rather Ugly Animals"
+                ]
+            ]
+        );
     }
 
 }

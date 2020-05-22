@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends("app")
+{{-- @extends('layouts.app') --}}
 
 @section('content')
 <div class="container">
@@ -10,20 +11,21 @@
                 </div>
 
                 <div class="card-body">
+
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h5>
-                        Status: Logged in as {{ Auth::user()->name }}
-                    </h5>
 
+                    <h2>Logged in as "{{ Auth::user()->name }}" </h2>
+                    <h3>Role: {{ Auth::user()->role }} </h3><br>
+                    <h4>List all <a href="/owners/">owners</a></h4>
+                    <h4>List all <a href="/animals/">animals</a></h4>
                 </div>
             </div>
         </div>
     </div>
-
 
 </div>
 @endsection

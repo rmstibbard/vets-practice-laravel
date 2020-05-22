@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Owner;
 use App\Animal;
+use Illuminate\Http\Request;
 use App\Http\Requests\OwnerRequest;
 
 class Owners extends Controller

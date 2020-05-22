@@ -39,7 +39,9 @@ class Animals extends Controller
     public function editAnimal(Animal $animal, AnimalRequest $request)
     {
         $data = $request->all();
+        $treatments = explode(",", $request->get("treatments"));
         $animal->fill($data)->save();
+        $animal->setTreatments($treatments);
         return redirect("/animals/{$animal->id}");
     }
 
@@ -55,6 +57,7 @@ class Animals extends Controller
     public function createAnimal(Request $request)
     {
         $data = $request->all();
+        dd($data);
         $animal = Animal::create($data);
         return redirect("/animals/{$animal->id}");
     }

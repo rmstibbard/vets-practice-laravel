@@ -16,7 +16,15 @@ class Animal extends Model
         return $this;
     }
 
-    protected $fillable = ["animal_name", "animal_type", "owner_id", "dob", "weight", "height", "biteyness"];
+    protected $fillable = [
+        "animal_name",
+        "animal_type",
+        "owner_id",
+        "dob",
+        "weight",
+        "height",
+        "biteyness"
+    ];
 
     public function treatments()
     {

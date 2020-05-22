@@ -12,6 +12,12 @@
     </div>
 
     <div class="form-group">
+        <label for="treatments">Treatments</label>
+        <input id="treatments" name="treatments" class="form-control"
+            value="{{ $animal ? $animal->treatments->implode('name',", ") ?? '' : '' }}">
+    </div>
+
+    <div class="form-group">
         <label for="dob">Date of birth</label>
         <input id="dob" name="dob" class="form-control"
             value="{{ $animal ? $animal->dob ?? '' : '' }}">
