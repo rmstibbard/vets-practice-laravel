@@ -1,17 +1,28 @@
 @extends("app")
 @section("content")
-<div class="ca rd">
+<div class="card">
     <div class="owner" ">
         <h5 class="mb-1">
             {{ $owner->fullName() }}
         </h5>
-        <h6>
-            {{ $owner->fullAddress() }}
-        </h6>
-
         <p>
-            <a class="edit edit-owner" href="/owners/edit/{{ $owner->id }}">EDIT OWNER</a></span>
+            {{ $owner->fullAddress() }}
         </p>
+        <p>
+            {{ $owner->phoneNumbers() }}
+
+            <span class="owner-list-edit">
+                <a class="btn btn-outline-dark"
+                    href="/owners/edit/{{ $owner->id }}">
+                    Edit
+                </a>
+                <a onclick="confirm()" class="btn btn-outline-danger"
+                    href="/owners/delete/{{ $owner->id }}">
+                    Delete
+                </a>
+            </span>
+        </p>
+
     </div>
     <hr>
 
@@ -35,9 +46,18 @@
                 @if ($animal->dangerous()==true)
                     <span class="dangerous">&nbsp;&nbsp;DANGEROUS!</span>
                 @endif
+
                 <span class="animal-list-edit">
-                    <a class="edit-animal edit" href="/animals/edit/{{ $animal->id }}">Edit</a>
+                    <a class="btn btn-outline-dark"
+                        href="/animals/edit/{{ $animal->id }}">
+                        Edit
+                    </a>
+                    <a onclick="confirm()" class="btn btn-outline-danger"
+                        href="/animals/delete/{{ $animal->id }}">
+                        Delete
+                    </a>
                 </span>
+
             </p>
         @endforeach
 

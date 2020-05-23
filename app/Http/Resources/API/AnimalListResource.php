@@ -14,11 +14,9 @@ class AnimalListResource extends JsonResource
      */
     public function toArray($request)
     {
-       // dd($this->owner);
-
          return [
             "id" => $this->id,
-            "name" => $this->name,
+            "animal_name" => $this->animal_name,
             "animal_type" => $this->animal_type,
             "height" => $this->height,
             "weight" => $this->weight,

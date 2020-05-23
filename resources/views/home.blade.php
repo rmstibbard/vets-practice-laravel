@@ -18,10 +18,25 @@
                         </div>
                     @endif
 
-                    <h2>Logged in as "{{ Auth::user()->name }}" </h2>
-                    <h3>Role: {{ Auth::user()->role }} </h3><br>
-                    <h4>List all <a href="/owners/">owners</a></h4>
-                    <h4>List all <a href="/animals/">animals</a></h4>
+                    <h2>Logged in as
+                        {{ ucfirst(Auth::user()->name) }} ({{ Auth::user()->role }})
+                    </h2>
+                    <br>
+
+                    <p>
+                        <a href="/owners/">
+                            <button class="btn btn-outline-dark" style="margin-right: 20px">
+                                LIST ALL OWNERS
+                            </button>
+                        </a>
+
+                        <a href="/animals/">
+                            <button class="btn btn-outline-dark">
+                                LIST ALL ANIMALS
+                            </button>
+                        </a>
+                    </p>
+
                 </div>
             </div>
         </div>
@@ -29,3 +44,4 @@
 
 </div>
 @endsection
+

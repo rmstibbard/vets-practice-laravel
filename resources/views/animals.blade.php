@@ -20,8 +20,14 @@
                     <span class="dangerous">&nbsp;&nbsp;DANGEROUS!</span>
                 @endif
                 <span class="animal-list-edit">
-                    <a class="btn btn-primary" href="/animals/edit/{{ $animal->id }}">Edit</a>
-                    <a onclick="confirm()" class="btn btn-danger" href="/animals/delete/{{ $animal->id }}">Delete</a>
+                    <a class="btn btn-outline-primary"
+                        href="/animals/edit/{{ $animal->id }}">
+                        Edit
+                    </a>
+                    <a onclick="confirm()" class="btn btn-outline-danger"
+                        href="/animals/delete/{{ $animal->id }}">
+                        Delete
+                    </a>
                 </span>
             </p>
         @endforeach

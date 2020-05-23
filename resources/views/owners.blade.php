@@ -17,8 +17,14 @@
                 </span>
 
                 <span class="owner-list-edit">
-                    <a class="btn btn-primary" href="/owners/edit/{{ $owner->id }}">Edit</a>
-                    <a onclick="confirm()" class="btn btn-danger" href="/owners/delete/{{ $owner->id }}">Delete</a>
+                    <a class="btn btn-outline-dark"
+                        href="/owners/edit/{{ $owner->id }}">
+                        Edit
+                    </a>
+                    <a onclick="confirm()" class="btn btn-outline-danger"
+                        href="/owners/delete/{{ $owner->id }}">
+                        Delete
+                    </a>
                 </span>
 
         @endforeach

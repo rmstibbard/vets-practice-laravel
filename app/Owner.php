@@ -29,7 +29,11 @@ class Owner extends Model
 
     public function fullAddress()
     {
-        return $this->address_1 . ", " . $this->address_2 . ", " . $this->town . ", " . $this->postcode . ". Landline: " . $this->formattedPhoneNumber() . ". Mobile: " . $this->mobile;
+        return $this->address_1 . ", " . $this->address_2 . ", " . $this->town . ", " . $this->postcode;
+    }
+
+    public function phoneNumbers() {
+        return "Landline: " . $this->formattedPhoneNumber() . ". Mobile: " . $this->mobile;
     }
 
     public function animals()

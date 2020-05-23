@@ -8,9 +8,10 @@ Auth::routes();
 
 
 // USERS GROUP - LOGIN REQUIRED
-Route::group(["prefix" => "users", "middleware" => "auth" ], function () {
-    Route::get('/{user}', "Users@edit");
-    Route::post('/edit/{user}', "Users@editOwner");
+Route::group(["prefix" => "userprofile", "middleware" => "auth" ], function () {
+    Route::post('/', "UserprofileController@index");
+    Route::post('/edit', "UserprofileController@edit");
+    Route::post('/editUserprofile', "UserprofileController@editUserprofile");
 });
 
 

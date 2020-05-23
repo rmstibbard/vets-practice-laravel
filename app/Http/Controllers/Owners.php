@@ -27,7 +27,7 @@ class Owners extends Controller
     }
 
     // EDIT OWNER
-        public function edit(Owner $owner)
+    public function edit(Owner $owner)
     {
         return view("editOwner", [
             "owner" => $owner,
