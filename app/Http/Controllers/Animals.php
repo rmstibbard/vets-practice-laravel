@@ -57,7 +57,6 @@ class Animals extends Controller
     public function createAnimal(Request $request)
     {
         $data = $request->all();
-        dd($data);
         $animal = Animal::create($data);
         return redirect("/animals/{$animal->id}");
     }

@@ -50,11 +50,18 @@ class Owners extends Controller
             "animals" => Animal::all()
         ]);
     }
+
     public function createOwner(Request $request)
     {
         $data = $request->all();
         $owner = Owner::create($data);
         return redirect("/owners/{$owner->id}");
+    }
+
+    // DELETE OWNER
+    public function deleteOwner(Owner $owner) {
+        $owner->delete($owner);
+        return redirect("/owners");
     }
 
 }

@@ -10,7 +10,6 @@
                         {{ $owner->fullName() }}
                     </a>
                 </span>
-                <br>
 
                 <span class="owner-list-details">
                         {{ $owner->fullAddress() }}

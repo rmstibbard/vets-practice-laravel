@@ -7,40 +7,30 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h1>Your Profile</h1>
+                    <h1>Edit Your Profile</h1>
                 </div>
 
                 <div class="card-body">
 
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <h2>Logged in as
-                        {{ ucfirst(Auth::user()->name) }} ({{ Auth::user()->role }})
-                    </h2>
-
-                    <h2>Edit your profile</h2>
                     <form method="post">
                         @csrf
+
                         <div class="form-group">
-                            <label for="name">Username</label>
+                            <label for="name">Name</label>
                             <input id="name" name="name" class="form-control"
-                                value="{{ Auth::user()->name }}">
+                                value="{{ Auth::user()->name ?? '' }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Email</label>
-                            <input id="email" name="name" class="form-control"
-                                value="{{ Auth::user()->email }}">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" class="form-control"
+                                value="{{ Auth::user()->email ?? '' }}">
                         </div>
 
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <input disabled id="role" name="name" class="form-control"
-                                value="{{ Auth::user()->role }}">
+                            <input id="role" name="role" class="form-control"
+                                value="{{ Auth::user()->role ?? '' }}">
                         </div>
 
                         <div class="form-group">
@@ -48,6 +38,7 @@
                         </div>
 
                     </form>
+
                 </div>
             </div>
         </div>

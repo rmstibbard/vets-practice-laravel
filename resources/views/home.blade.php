@@ -12,18 +12,18 @@
 
                 <div class="card-body">
 
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
                     <h2>Logged in as
                         {{ ucfirst(Auth::user()->name) }} ({{ Auth::user()->role }})
                     </h2>
                     <br>
 
                     <p>
+                        <a href="/users/">
+                            <button class="btn btn-outline-dark" style="margin-right: 20px">
+                                LIST ALL USERS
+                            </button>
+                        </a>
+
                         <a href="/owners/">
                             <button class="btn btn-outline-dark" style="margin-right: 20px">
                                 LIST ALL OWNERS
@@ -36,6 +36,8 @@
                             </button>
                         </a>
                     </p>
+
+                    <h5><a href="userprofile/edit">Edit your profile</a></h5>
 
                 </div>
             </div>

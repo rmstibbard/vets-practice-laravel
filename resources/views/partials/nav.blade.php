@@ -20,12 +20,15 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/">HOME</a>
             </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="/owners/">OWNERS</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="/animals/">ANIMALS</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/users/">USERS</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/owners/">OWNERS</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/animals/">ANIMALS</a>
+            </li>
         @endif
 
     </ul>

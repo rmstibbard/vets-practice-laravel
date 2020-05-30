@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class OwnerRequest extends FormRequest
+class UserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class OwnerRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return true; // CHECK
     }
 
     /**
@@ -23,12 +23,13 @@ class OwnerRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'firstname' => ['required', 'string'],
-            'lastname' => ['required', 'string'],
-            'address_1' => ['required', 'string'],
-            'address_2' => ['required', 'string'],
-            'town' => ['required', 'string']
-        ];
+        public function rules()
+        {
+            return [
+                'name' => ['required', 'string'],
+                'email' => ['required', 'string'],
+                'role' => ['required', 'string']
+            ];
+        }
     }
 }
