@@ -17,7 +17,10 @@ ul.navbar-nav {
 .animal-list-edit,
 .animal-list-delete,
 .owner-list-edit,
-.owner-list-delete {
+.owner-list-delete,
+.user-list-edit,
+.user-list-delete
+{
     float: right;
     padding-right: 40px;
 }
@@ -96,7 +99,8 @@ a.edit:visited {
 }
 
 .animal-list-name,
-.owner-list-name {
+.owner-list-name,
+.user-list-name {
     color: black;
     font-size: 1.5rem;
     font-weight: bold;
@@ -113,15 +117,21 @@ a.edit:visited {
     font-size: 1.2rem;
     font-weight: bold;
 }
- .animal-link:link, .owner-link:link {
+ .animal-link:link,
+ .owner-link:link,
+ .user-link:link {
     color:black;
 }
 
-.animal-link:visited, .owner-link:visited {
+.animal-link:visited,
+.owner-link:visited,
+.user-link:visited {
     color:black;
 }
 
-.animal-link:hover, .owner-link:hover {
+.animal-link:hover,
+.owner-link:hover,
+.user-link:hover {
     color:black;
     text-decoration: underline;
 }

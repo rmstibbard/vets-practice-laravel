@@ -10,36 +10,47 @@
                     <h1>Dashboard</h1>
                 </div>
 
-                <div class="card-body">
+                @if (Auth::check())
+                    <div class="card-body">
 
-                    <h2>Logged in as
-                        {{ ucfirst(Auth::user()->name) }} ({{ Auth::user()->role }})
-                    </h2>
-                    <br>
+                        <h2>Logged in as
+                            {{ ucfirst(Auth::user()->name) }} ({{ Auth::user()->role }})
+                        </h2>
+                        <p>
 
-                    <p>
-                        <a href="/users/">
-                            <button class="btn btn-outline-dark" style="margin-right: 20px">
-                                LIST ALL USERS
-                            </button>
-                        </a>
+                        @if (Auth::user()->role === "superuser")
 
-                        <a href="/owners/">
-                            <button class="btn btn-outline-dark" style="margin-right: 20px">
-                                LIST ALL OWNERS
-                            </button>
-                        </a>
+                                <a href="/users/">
+                                    <button class="btn btn-outline-dark" style="margin-right: 20px">
+                                        LIST ALL USERS
+                                    </button>
+                                </a>
 
-                        <a href="/animals/">
-                            <button class="btn btn-outline-dark">
-                                LIST ALL ANIMALS
-                            </button>
-                        </a>
-                    </p>
+                        @endif
 
-                    <h5><a href="userprofile/edit">Edit your profile</a></h5>
+                            <a href="/owners/">
+                                <button class="btn btn-outline-dark" style="margin-right: 20px">
+                                    LIST ALL OWNERS
+                                </button>
+                            </a>
 
-                </div>
+                            <a href="/animals/">
+                                <button class="btn btn-outline-dark">
+                                    LIST ALL ANIMALS
+                                </button>
+                            </a>
+                        </p>
+
+                        @if (Auth::user()->role === "superuser")
+                            <h5><a href="users/edit">Edit users</a></h5>
+                        @endif
+                        @if (Auth::user()->role === "admin")
+                            <h5><a href="users/edit/{{Auth::user()->id}}">Edit your profile</a></h5>
+                        @endif
+
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>

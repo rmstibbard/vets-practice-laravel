@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h1>Edit Your Profile</h1>
+                    <h1>Create New User</h1>
                 </div>
 
                 <div class="card-body">
