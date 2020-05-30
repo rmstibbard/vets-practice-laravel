@@ -31,7 +31,11 @@
             </div>
 
         </form>
+    @else
+    <h2>You are not allowed to edit this profile</h2>
     @endif
 @endif
+
+
 
 @endsection

@@ -30,7 +30,7 @@ class Pages extends Controller
                 [
                     "Vaccines and boosters",
                     "Minor surgery",
-                    "Pedicure and Beautification of Rather Ugly Animals"
+                    "Pedicure and General Beautification of Otherwise Rather Ugly Animals"
                 ]
             ]
         );
